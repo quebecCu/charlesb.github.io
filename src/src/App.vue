@@ -2,17 +2,16 @@
   <div id="app" class="fullHeight">
     <div class="container-fluid fullHeight">
       <div class="row fullHeight">
-        <div class="col-xs-12 col-md-3 bg-info fullHeight">
+        <div class="hidden-xs col-md-3 bg-info fullHeight">
           <h1 class="text-center">Charles Belzile</h1>
           <p class="text-center">&Eacute;tudiant en informatique originaire du Qu&eacute;bec. Pr&eacute;sentement en France.</p>
           <hr style="color:black;background-color:black;">
           <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">Accueil</a></li>
-            <li><a href="#">Comp&eacute;tences informatique</a></li>
-            <li><a href="#">Exp&eacute;rience proffessionel</a></li>
-            <li><a href="#">Parcours scolaire</a></li>
-            <li><a href="#">Loisirs</a></li>
-            <li><a href="#">Contact</a></li>
+            <li v-bind:class="{ active: currentView === 'accueil' }" @click="currentView = 'accueil'"><a href="#">Accueil</a></li>
+            <li v-bind:class="{ active: currentView === 'competences' }" @click="currentView = 'competences'"><a href="#">Comp&eacute;tences informatique</a></li>
+            <li v-bind:class="{ active: currentView === 'experiences' }" @click="currentView = 'experiences'"><a href="#">Exp&eacute;riences professionelles</a></li>
+            <li v-bind:class="{ active: currentView === 'scolaires' }" @click="currentView = 'scolaires'"><a href="#">Parcours scolaire</a></li>
+            <li v-bind:class="{ active: currentView === 'loisirs' }" @click="currentView = 'loisirs'"><a href="#">Loisirs</a></li>
           </ul>
           <div class="menu-bottom">
             <div class="centerd">
@@ -40,8 +39,14 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-md-9 text-center">
-          <img src="./assets/page-en-construction.png" style="margin-top:20px;"/>
+        <div class="col-xs-12 col-md-9 text-center maxHeight">
+          <keep-alive>
+            <transition name="component-fade" mode="out-in">
+              <component :is="currentView" class="maxHeight">
+                <!-- inactive components will be cached! -->
+              </component>
+            </transition>
+          </keep-alive>
         </div>
       </div>
     </div>
@@ -49,10 +54,26 @@
 </template>
 
 <script>
+import Accueil from './Components/Accueil.vue'
+import Competences from './Components/Competences.vue'
+import Experiences from './Components/Experiences.vue'
+import Scolaires from './Components/Scolaires.vue'
+import Loisirs from './Components/Loisirs.vue'
+
 export default {
   name: 'app',
-  data: {
-    showLang: false
+  components:{
+    accueil: Accueil,
+    competences: Competences,
+    experiences: Experiences,
+    scolaires: Scolaires,
+    loisirs: Loisirs
+  },
+  data () {
+    return {
+      showLang: false,
+      currentView: 'accueil'
+    }
   },
   methods:{
     toggleLang: function(){
@@ -77,5 +98,12 @@ export default {
 }
 .centerd {
     display:table-cell;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for <2.1.8 */ {
+  opacity: 0;
 }
 </style>
