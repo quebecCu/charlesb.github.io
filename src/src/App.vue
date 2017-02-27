@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-9 text-center">
-          <img src="img/page-en-construction.png" style="margin-top:20px;"/>
+          <img src="./assets/page-en-construction.png" style="margin-top:20px;"/>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-const app = new Vue({
-  App
+new Vue({
+  el: '#app',
+  render: h => h(App)
 })
-app.$mount('#app')

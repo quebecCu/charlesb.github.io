@@ -1,8 +1,8 @@
 {
   "name": "charlesbelzile.com",
-  "description": "Charles Belzile webpage",
+  "description": "Charles Belzile CV",
   "version": "1.0.0",
-  "author": "Charles Belzile",
+  "author": "Charles <charles.belzile@hotmail.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
