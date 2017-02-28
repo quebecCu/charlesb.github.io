@@ -14,13 +14,13 @@
     <div class="jumbotron text-left">
       <div class="container text-left">
         <div class="row text-left">
-          <div class="col-xs-2 text-left">
+          <div class="col-xs-12 col-sm-3 col-md-2 text-left">
             <span class="fa-stack fa-3x">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-file-text fa-stack-1x" style="color:#d9edf7;"></i>
             </span>
           </div>
-          <div class="col-xs-10 text-left">
+          <div class="col-xs-12 col-sm-9 col-md-10 text-left">
             <h5>Gestion de l'informatique</h5>
             &Eacute;tudiant l'informatique de gestion, j'&eacute;prouve un grand int&eacute;r&egrave;t &agrave; &eacute;tudier comment les technologies de l'information influence le milieu
             dans lequel il se trouve. Que ce soit dans une organisation ou pour un individuel, j'aime trouver des solutions informatiques pour faciliter certains aspects de nos vie.
@@ -31,13 +31,13 @@
     <div class="jumbotron text-left">
       <div class="container text-left">
         <div class="row text-left">
-          <div class="col-xs-2 text-left">
+          <div class="col-xs-12 col-sm-3 col-md-2 text-left">
             <span class="fa-stack fa-3x">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-code fa-stack-1x" style="color:#d9edf7;"></i>
             </span>
           </div>
-          <div class="col-xs-10 text-left">
+          <div class="col-xs-12 col-sm-9 col-md-10 text-left">
             <h5>Web</h5>
             Les nouvelles technologies web m'int&eacute;resse beaucoup. J'ai d'abord commenc&eacute; avec HTML et CSS.
             J'ai ensuite d&eacute;couvert Javascript ainsi que les diff&eacute;rents <i>Framework</i> disponibles. Ce qui m'a d'ailleurs amen&eacute; &agrave; cr&eacute;er ce site.
@@ -48,13 +48,13 @@
     <div class="jumbotron text-left">
       <div class="container text-left">
         <div class="row text-left">
-          <div class="col-xs-2 text-left">
+          <div class="col-xs-12 col-sm-3 col-md-2 text-left">
             <span class="fa-stack fa-3x">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-btc fa-stack-1x" style="color:#d9edf7;"></i>
             </span>
           </div>
-          <div class="col-xs-10 text-left">
+          <div class="col-xs-12 col-sm-9 col-md-10 text-left">
             <h5>Technologie Blockchain</h5>
             Lorsque j'ai entendu parler pour la premi&egrave;re fois du Bitcoin, j'ai tout de suite &eacute;t&eacute; int&eacute;resse&eacute; par cette technologie.
             J'essaie de m'informer le plus possible sur ce sujet ainsi que sur la technologie qui se trouve &agrave; l'arri&egrave;re de ce concept: la Blockchain.

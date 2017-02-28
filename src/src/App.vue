@@ -2,17 +2,18 @@
   <div id="app" class="fullHeight">
     <div class="container-fluid fullHeight">
       <div class="row fullHeight">
-        <div class="hidden-xs col-md-3 bg-info fullHeight">
+        <div id="sideMenu" class="col-md-3 bg-info fullHeight">
+          <i class="visible-xs fa fa-2x fa-times menuClose" aria-hidden="true" @click="toggleMenu()"></i>
           <h1 class="text-center">Charles Belzile</h1>
           <p class="text-center">&Eacute;tudiant en informatique originaire du Qu&eacute;bec. Pr&eacute;sentement en France.</p>
           <hr style="color:black;background-color:black;">
           <ul class="nav nav-pills nav-stacked">
-            <li v-bind:class="{ active: currentView === 'accueil' }" @click="currentView = 'accueil'"><a href="#">Accueil</a></li>
-            <li v-bind:class="{ active: currentView === 'competences' }" @click="currentView = 'competences'"><a href="#">Comp&eacute;tences informatique</a></li>
-            <li v-bind:class="{ active: currentView === 'experiences' }" @click="currentView = 'experiences'"><a href="#">Exp&eacute;riences professionelles</a></li>
-            <li v-bind:class="{ active: currentView === 'scolaires' }" @click="currentView = 'scolaires'"><a href="#">Parcours scolaire</a></li>
-            <li v-bind:class="{ active: currentView === 'loisirs' }" @click="currentView = 'loisirs'"><a href="#">Loisirs</a></li>
-            <li v-bind:class="{ active: currentView === 'contact' }" @click="currentView = 'contact'"><a href="#">Contact</a></li>
+            <li v-bind:class="{ active: currentView === 'accueil' }" @click="changeView('accueil')"><a href="#">Accueil</a></li>
+            <li v-bind:class="{ active: currentView === 'competences' }" @click="changeView('competences')"><a href="#">Comp&eacute;tences informatique</a></li>
+            <li v-bind:class="{ active: currentView === 'experiences' }" @click="changeView('experiences')"><a href="#">Exp&eacute;riences professionelles</a></li>
+            <li v-bind:class="{ active: currentView === 'scolaires' }" @click="changeView('scolaires')"><a href="#">Parcours scolaire</a></li>
+            <li v-bind:class="{ active: currentView === 'loisirs' }" @click="changeView('loisirs')"><a href="#">Loisirs</a></li>
+            <li v-bind:class="{ active: currentView === 'contact' }" @click="changeView('contact')"><a href="#">Contact</a></li>
           </ul>
           <div class="menu-bottom">
             <div class="centerd">
@@ -41,6 +42,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-md-9 text-center maxHeight">
+          <i class="visible-xs fa fa-2x fa-bars menuToggle" aria-hidden="true" @click="toggleMenu()"></i>
           <keep-alive>
             <transition name="component-fade" mode="out-in">
               <component :is="currentView" class="maxHeight">
@@ -75,6 +77,7 @@ export default {
   data () {
     return {
       showLang: false,
+      showMenu: false,
       currentView: 'accueil'
     }
   },
@@ -87,18 +90,65 @@ export default {
         document.getElementById('showLang').style.display = 'none';
         this.showLang = false;
       }
+    },
+    changeView(view){
+      this.currentView = view
+      if (window.innerWidth < 770){
+        this.toggleMenu();
+      }
+    },
+    toggleMenu(){
+      if (this.showMenu === false){
+        var style = document.getElementById('sideMenu').style
+        document.getElementById('sideMenu').style.display = 'block';
+        this.showMenu = true;
+      }else{
+        document.getElementById('sideMenu').style.display = 'none';
+        this.showMenu = false;
+      }
     }
   }
 }
 </script>
 
 <style>
-.menu-bottom{
-  position: absolute;
-  display:table;
-  vertical-align:middle;
-  bottom:5px;
+
+@media (min-width: 900px) {
+  .menu-bottom{
+    position: absolute;
+    display:table;
+    vertical-align:middle;
+    bottom:5px;
+  }
 }
+
+@media (max-width: 768px) {
+  #sideMenu{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top:0px;
+    left:0px;
+    right:0px;
+    left:0px;
+    overflow-y: auto;
+  }
+}
+
+.menuClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.6;
+}
+
+.menuToggle{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  opacity: 0.6;
+}
+
 .centerd {
     display:table-cell;
 }
