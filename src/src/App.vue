@@ -12,6 +12,7 @@
             <li v-bind:class="{ active: currentView === 'experiences' }" @click="currentView = 'experiences'"><a href="#">Exp&eacute;riences professionelles</a></li>
             <li v-bind:class="{ active: currentView === 'scolaires' }" @click="currentView = 'scolaires'"><a href="#">Parcours scolaire</a></li>
             <li v-bind:class="{ active: currentView === 'loisirs' }" @click="currentView = 'loisirs'"><a href="#">Loisirs</a></li>
+            <li v-bind:class="{ active: currentView === 'contact' }" @click="currentView = 'contact'"><a href="#">Contact</a></li>
           </ul>
           <div class="menu-bottom">
             <div class="centerd">
@@ -59,6 +60,7 @@ import Competences from './Components/Competences.vue'
 import Experiences from './Components/Experiences.vue'
 import Scolaires from './Components/Scolaires.vue'
 import Loisirs from './Components/Loisirs.vue'
+import Contact from './Components/Contact.vue'
 
 export default {
   name: 'app',
@@ -67,7 +69,8 @@ export default {
     competences: Competences,
     experiences: Experiences,
     scolaires: Scolaires,
-    loisirs: Loisirs
+    loisirs: Loisirs,
+    contact: Contact
   },
   data () {
     return {

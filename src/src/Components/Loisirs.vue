@@ -32,23 +32,9 @@
 </template>
 
 <script>
-var Waterfall = require('vue-waterfall')
 
 export default {
-  name: 'accueil',
-  components: {
-    'waterfall': Waterfall.waterfall,
-    'waterfall-slot': Waterfall.waterfallSlot,
-  },
-  data () {
-    return {
-      showLang: false,
-      currentView: 'accueil'
-    }
-  },
-  methods:{
-
-  }
+  name: 'accueil'
 }
 </script>
 

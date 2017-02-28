@@ -66,12 +66,8 @@ export default {
   name: 'accueil',
   data () {
     return {
-      showLang: false,
-      currentView: 'accueil'
+      showLang: false
     }
-  },
-  methods:{
-
   }
 }
 </script>
