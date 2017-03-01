@@ -113,15 +113,6 @@ export default {
 
 <style>
 
-@media (min-width: 900px) {
-  .menu-bottom{
-    position: absolute;
-    display:table;
-    vertical-align:middle;
-    bottom:5px;
-  }
-}
-
 @media (max-width: 768px) {
   #sideMenu{
     display: none;

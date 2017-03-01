@@ -37,15 +37,3 @@ export default {
   name: 'accueil'
 }
 </script>
-
-<style>
-.menu-bottom{
-  position: absolute;
-  display:table;
-  vertical-align:middle;
-  bottom:5px;
-}
-.centerd {
-    display:table-cell;
-}
-</style>
