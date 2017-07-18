@@ -12,7 +12,7 @@
             <li v-bind:class="{ active: currentView === 'competences' }" @click="changeView('competences')"><a href="#">Comp&eacute;tences informatique</a></li>
             <li v-bind:class="{ active: currentView === 'experiences' }" @click="changeView('experiences')"><a href="#">Exp&eacute;riences professionelles</a></li>
             <li v-bind:class="{ active: currentView === 'scolaires' }" @click="changeView('scolaires')"><a href="#">Parcours scolaire</a></li>
-            <li v-bind:class="{ active: currentView === 'realisation' }" @click="changeView('scolaires')"><a href="#">R&eacute;alisations</a></li>
+            <li v-bind:class="{ active: currentView === 'realisation' }" @click="changeView('realisation')"><a href="#">R&eacute;alisations</a></li>
             <li v-bind:class="{ active: currentView === 'loisirs' }" @click="changeView('loisirs')"><a href="#">Loisirs</a></li>
             <li v-bind:class="{ active: currentView === 'contact' }" @click="changeView('contact')"><a href="#">Contact</a></li>
           </ul>
